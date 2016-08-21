@@ -1,0 +1,183 @@
+/*GENERAL*/
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: $container-lg;
+	margin: 0 auto;
+}
+.u-position-relative { 
+	position: relative;
+}
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    color: #1e1354;
+    overflow-x: hidden;
+}
+
+/*SLICK*/
+.slick-list {
+	width: 100%;
+}
+.slick-slider .slick-arrow {
+    position: absolute;
+}
+.slick-next {
+	right: 0;
+}
+.slick-prev {
+	left: 0;
+}
+
+.slick-dots {
+	text-align: center;
+	margin: 20px 0 0;
+	//position: absolute;
+    //bottom: -45px;
+    width: 100%;
+    z-index: 1;
+	li {
+		display: inline-block;
+		button {
+			margin: 0 10px 0 0;
+		    overflow: hidden;
+		    width: 12px;
+		    height: 12px;
+		    text-indent: -200px;
+		    padding: 0;
+		    border-radius: 50%;
+		    background: #ffffff;
+		}
+	}
+	.slick-active {
+		button {
+			background: #000000;
+		}
+	}
+}
+
+/*COMPONENT SPECIFIC*/
+.c-herohotspot-carousel__item {
+	padding: 0 20px;
+	position: relative;
+	&.c-herohotspot-carousel__item--active {
+		.c-herohotspot-carousel__preview {
+			opacity: 0;
+		}
+		.c-herohotspot-carousel__full {
+			//display: block;
+			opacity: 1;
+		}
+	}
+}
+.c-herohotspot-carousel__preview {
+	transition: opacity 0.3s;
+	opacity: 1;
+	border-bottom: 1px solid #cccccc;
+	h2 { padding: 20px 0; }
+}
+.c-herohotspot-carousel__full {
+	background: #ffffff;
+    box-shadow: 0 -2px 12px #ccc;
+	width: calc(100% - 30px);
+	position: absolute;
+    bottom: 0;
+    z-index: 9;
+    padding: 0 30px;
+    border-bottom: 1px solid #cccccc;
+    @media only screen and (min-width: $screen-md) {
+		opacity: 0;
+		transition: opacity 0.3s;
+    }
+}
+.c-herohotspot-carousel.slick-slider {
+	.slick-list {
+		z-index: 9;
+		padding-top: 15px!important;
+		padding-bottom: 15px!important;
+	}
+}
+.c-herohotspot-carousel.slick-slider {
+    margin-top: -70px;
+	.c-herohotspot-carousel__preview {
+		display: none;
+	}
+	.c-herohotspot-carousel__full {
+		position: static;
+		width: 100%;
+		float: left;
+		display: block;
+	}
+	.c-herohotspot-carousel__links {
+		opacity: 0;
+		transition: opacity 0.6s;
+	}
+	.slick-active { 
+		.c-herohotspot-carousel__full {
+			opacity: 1;
+		}
+		.c-herohotspot-carousel__links {
+			opacity: 1;
+		}
+	}
+	.slick-dots {
+	    bottom: -25px;
+	}
+	.slick-arrow {
+		top: auto;
+	    bottom: -5px;
+	    &.slick-prev {
+	    	left: 20px;
+	    }
+	    &.slick-next {
+	    	right: 20px;
+	    }
+	}
+}
+
+//LINKED IMAGES ON NEWS LANDING PAGE
+.c-heroimage-carousel {
+	overflow: hidden;
+	position: relative;
+	height: 320px;
+	@media only screen and (min-width: $screen-sm) {
+		height: 450px;
+	}
+}
+.c-heroimage-carousel__text {
+    margin: 0;
+    padding: 40px 0;
+    color: #FFF;
+    font-style: italic;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	
+}
+.c-heroimage-carousel__image {
+	background-position: top center;
+	background-size: cover;
+	height: 320px;
+	@media only screen and (min-width: $screen-sm) {
+		height: 450px;
+
+	}
+	@media only screen and (min-width: $screen-md) { //custom carousel
+		position: absolute;
+		top: 0;
+		width: 100%;
+		//display: none;
+		opacity: 0;
+		transition: all 1s;
+		&.c-heroimage-carousel__image--active {
+			//display: block;
+			opacity: 1;
+		}
+	}
+}

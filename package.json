@@ -1,0 +1,25 @@
+{
+  "name": "Template",
+  "version": "1.2.0",
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-jshint": "^2.0.1",
+    "gulp-pxtorem": "^2.0.0",
+    "gulp-rename": "*",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "gulp-webpack": "^1.5.0",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-transform-es3-member-expression-literals": "*",
+    "babel-plugin-transform-es3-property-literals": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-stage-2": "*"
+  }
+}
